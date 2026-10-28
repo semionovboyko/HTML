@@ -1,0 +1,33 @@
+!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <SCRIPT LANGUAGE="JavaScript">
+        //objetos y funciones ya existentes
+
+        /*
+        parseInt(cadena)
+        parseFloat(cadena)
+        isNaN(cadena)
+        */
+
+        do {
+            var numero = prompt("Esto se repetira hasta que metas un numero");
+        } while (isNaN(numero));
+
+        //funcion eval
+        /*
+        Eval es una función que recibe una cadena y la interpreta como código Javascript. 
+        También vale para expresiones numéricas, donde te devuelve el resultado. 
+        Se usa para JSON
+        */
+        var x = 3;
+        var y = 2;
+        var a = eval("2+3");
+        var b = eval("x*y");
+
+        eval("alert('a vale '+a+' b vale '+b)");
+    </SCRIPT>
+</head>
+
+</html>

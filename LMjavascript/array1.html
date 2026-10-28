@@ -1,0 +1,130 @@
+<html>
+    <body>
+        <p><a href='https://www.w3schools.com/jsref/jsref_obj_array.asp'>Más referencias sobre los arrays en javascript</a></p>
+        <p name="fname">uno</p>
+        <p name="fname">dos</p>
+        <p name="fname">tres</p>
+        <p name="fname">cuatro</p>
+        <p name="fname">cinco</p>
+        <p name="fname">seis</p>
+        <p name="fname">siete</p>
+        <p name="fname">ocho</p>
+        <p name="fname">nueve</p>
+        <p name="fname">diez</p>
+        <p name="fname">once</p>
+        <p name="fname">doce</p>
+        <p name="fname">catorce</p>
+        <p name="fname">quince</p>
+        <p name="fname">dieciseis</p>
+
+
+
+        <script>
+/*UD02. SINTÁXIS JAVASCRIPT*/
+    //2.2 Arrays
+            /*var miVector=new Array();
+            miVector[0]=22;
+            miVector[1]=12;
+            miVector[2]=33;
+            //Array definido en una linea
+            var otroArray=[1,2,"Cancamusa"];
+            // Valores dentro del array
+            alert(miVector[1]);
+            alert(otroArray[2]);
+            // Valor completo del array
+            alert(miVector);
+            alert(otroArray);
+
+            // Tamanyo del array
+            alert(miVector.length);*/
+
+
+/*UNIDAD 3. OBJETOS PREDEFINIDOS*/
+    //5. OBJETO PREDEFINIDO ARRAY
+            var x=[1,2,3];
+            var y=[2,3,20,1];
+            // Damos la vuelta a un vector
+            document.getElementsByName("fname")[0].innerHTML="El vector x "+x;
+            document.getElementsByName("fname")[1].innerHTML="El vector y "+y;
+
+
+            x.reverse();
+            document.getElementsByName("fname")[2].innerHTML="El vector x al reves "+x;
+
+            // Ordenamos (recordamos que es alfabetico y no numerico
+            y.sort()
+            document.getElementsByName("fname")[3].innerHTML="El vector y ordenado "+y;
+
+            // Sacamos y eliminamos elemento shift elimina el primero... lo probais.
+            var sacado=y.pop();
+            document.getElementsByName("fname")[4].innerHTML="Sacamos y  eliminamos el último elementocon pop  "+sacado;
+
+            document.getElementsByName("fname")[5].innerHTML="Vector 'y' sin el último elemento "+y;
+            //push(elemento1,elemento2,….): añade al final los elementos1 y 2 en elorden proporcionado.
+            y.push(7,8,9);
+            document.getElementsByName("fname")[12].innerHTML="push "+y;
+//mostrar des inicio hasta fin, sin incluirlo.
+            document.getElementsByName("fname")[13].innerHTML="slice "+y.slice(0,4);
+
+
+//devuelve una cadena con todos los elementos del array,separados por el texto que se incluya en separador
+           
+
+    //3. OBJETO PREDEFINIDO STRING es un tipo de array
+    var cad="Pepe:Devesa:123456";
+    var tfo;
+    document.getElementsByName("fname")[6].innerHTML="El vector original "+cad;
+
+    cad=cad.toUpperCase();
+    document.getElementsByName("fname")[7].innerHTML="A Mayusculas "+cad;
+
+    splitTodosCampos=cad.split(":");
+    document.getElementsByName("fname")[8].innerHTML="split "+splitTodosCampos; // devuelve un vacor con cada uno de los elementos separados por :
+
+    split1Campo=cad.split(":",1);
+    document.getElementsByName("fname")[9].innerHTML="split "+split1Campo;
+
+   
+    tfo=splitTodosCampos[2];
+    //Cambio en el telefono los números 2 por 9s
+    tfo=tfo.replace("2","9");
+    document.getElementsByName("fname")[10].innerHTML="El Telefono con cambio "+tfo;
+
+    //Muestro el quinto numero del telefono
+    document.getElementsByName("fname")[11].innerHTML="El 4º num del Telefono "+tfo.charAt(4);
+    document.getElementsByName("fname")[11].innerHTML="El 4º num del Telefono "+tfo.charA
+    
+
+/*UNIDAD 5.DOM*/
+    //3.2 getElementsByTagName(etiqueta)
+            var pElement=document.getElementsByTagName("p");
+            alert("Hay "+pElement.length+" parrafos.");
+            alert("el 5º elemento es :"+pElement[5].innerHTML);
+
+
+    //3.3 getElementsByName(nombre)
+
+            var x = document.getElementsByName("fname");
+            var i;
+            
+            // Modificamos Todos los párrafos  
+            for (i = 0; i < x.length; i++) {
+                x[i].style.border='red 5px solid';
+                if(i%2){
+                    x[i].style.color='green';
+                    x[i].style.marginLeft='100px';
+                }else{
+                    x[i].style.color='blue';
+                    x[i].style.marginRight='100px';
+    
+                }
+                    
+
+            }
+
+
+            
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <title>Reloj con Javascript</title>
+    <script language="JavaScript">
+        /*SSEGUNDO Función para actualizar el valor del reloj
+
+        Tenemos que construir una función que recoja la hora del sistema y la muestre en el campo de texto.
+        Para tomar la hora vamos a hacer uso del objeto Date de Javascript.
+        momentoActual = new Date()
+        Si creamos una nueva instancia del objeto Date sin pasarle parámetros se inicializa a la fecha y hora actuales.
+        Luego tenemos que obtener de esa instancia de Date lo que nos interesa, que es la hora, los minutos y segundos. 
+        Esto lo hacemos utilizando los correspondientes métodos del objeto Date.
+
+        hora = momentoActual.getHours()
+        minuto = momentoActual.getMinutes()
+        segundo = momentoActual.getSeconds()
+
+        Ahora combinamos los resultados para construir la hora con el formato que deseamos.
+
+        horaImprimible = hora + " : " + minuto + " : " + segundo
+
+        Por último colocamos en el campo de texto del formulario el valor actual de la hora.
+
+        document.form_reloj.reloj.value = horaImprimible 
+
+                */
+        function mueveReloj() {
+            momentoActual = new Date()
+            hora = momentoActual.getHours()
+            minuto = momentoActual.getMinutes()
+            segundo = momentoActual.getSeconds()
+
+            horaImprimible = hora + " : " + minuto + " : " + segundo
+
+            document.form_reloj.reloj.value = horaImprimible
+                /*TERCERO La función debe llamarse a si misma
+
+                Con estas líneas de código obtenemos la hora y la actualizamos en su campo de texto, pero no está hecho todo,
+                necesitamos que esa función se llame constantemente y cada segundo para que actualice el valor de nuestro
+                campo de texto constantemente también.
+                Para ello, lo mejor es que la función se encargue también de llamarse a si misma al cabo de un segundo, 
+                así volverá a hacer todo el proceso de obtención y actualización de la hora y por último se llamará a si misma
+                al cabo de un segundo. Este proceso se repetirá por siempre hasta que nos salgamos de la página.
+                La línea de código para llamarse a si misma, que colocaremos en la última línea de la función es la siguiente:
+
+                setTimeout("mueveReloj()",1000)
+
+                La función setTimeout sirve para hacer el retardo antes de ejecutar la sentencia. La sentencia es una simple llamada a la función y el retardo es de 1000 milisegundos (un segundo). 
+
+
+                */
+            setTimeout("mueveReloj()", 1000)
+        }
+    </script>
+</head>
+<!--CUARTO Poner en marcha el reloj
+
+Finalmente necesitamos poner el reloj en marcha. Esto lo podemos hacer una vez acabada la carga de la página con el
+manejador de eventos onload, que se coloca en el <body>.
+
+<body onload="mueveReloj()">
+
+Esto quiere decir que cuando se termine de cargar la página se llame a la función mueveReloj(),
+que se encargará de mover el reloj y llamarse a si misma para hacer el proceso de manera continuada.-->
+
+<body onload="mueveReloj()">
+
+    Vemos aquí el reloj funcionando...
+    <!--PRIMERO Construir el formulario
+    Empezamos por colocar el campo de texto donde se mostrará el reloj. 
+    Debemos colocar un pequeño formulario donde tan solo tendremos un campo de texto.
+    Tanto al formulario como al campo de texto les asignamos un nombre para luego accederlos por ese
+     nombre mediante Javascript.  -->
+    <form name="form_reloj">
+        <!--QUINTO Añadidos al reloj
+        Podemos hacer muchas cosas para mejorar aspectos de este reloj. Por ejemplo darle un poco de estilo al campo de texto
+        o hacer que nadie se pueda posar encima del campo de texto para actualizar manualmente el valor de la hora.
+        Vamos a ver alguna cosilla.
+
+        Estilo al reloj
+        Con hojas de estilo podemos cambiar la apariencia del reloj para hacerlo un poco más especial. Este es un ejemplo de lo
+        que se podría poner.
+
+        <input type="text" name="reloj" size="10" style="background-color : Black; color : White; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;">
+
+        Evitar que accedan al campo de texto
+        Así nadie podrá modificar el texto del reloj manualmente. Lo conseguimos con Javascript. El manejador de eventos onfocus
+        se activa cuando el campo de texto adquiere el foco de la aplicación. En ese momento nosotros sacaremos el foco de
+        la aplicación con el método blur(). El botón quedaría así:
+
+        <input type="text" name="reloj" size="10" onfocus="window.document.form_reloj.reloj.blur()">
+
+        Hacer que siempre tengamos dos digitos en la hora minutos y segundos.
+        Para conseguir que la hora tenga siempre un formato hh : mm : ss debemos jugar un poco con los valores de tiempo como
+        si fueran strings. Para ello lo primero que tendremos que hacer es construir un string a partir del
+        valor (hora, minuto o segundo) que queramos formatear. Luego observaremos ese string para saber si tenemos que añadirle
+        un dígito al valor.
+
+        Veamos cómo obtenemos el string a partir del número de segundos obtenido. Lo hacemos para los segundos, la hora y 
+        los minutos serán realizados de manera similar.
+
+        str_segundo = new String (segundo)
+
+        Seguidamente observamos si tenemos un solo carácter en el string, porque si es así le tenemos que concatenar
+        un cero ("0") al principio.
+
+        if (str_segundo.length == 1)
+        segundo = "0" + segundo-->
+        <input type="text" name="reloj" size="10">
+        <input type="text" name="reloj" size="10" style="background-color : Black; color : White; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;" onfocus="window.document.form_reloj.reloj.blur()">
+    </form>
+
+</body>
+
+</html>

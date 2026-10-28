@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+
+<head> //meta datos o informacion no visible en la pagina web
+    <title>Mi primera web</title>
+</head>
+
+<body>
+    // lo que se va a mostrar en la pagina
+    <h1>Titulo de mi web</h1>// solo puede haber uno
+    <h2>Bienvenido a mi web</h2>
+    <p>//parafos<br/>//salto de linea</p>
+    <hr/>// salto de linea dibujando linea
+    <h3>Tercer encabezado de la pagina</h3>
+    <strong>//negrita</strong>
+    <em>//cursiba</em>
+    <span id="resaltado" class="rojo amarillo">// no hace nada pero con los atributos lo cambias</span>
+    <i>// tambien texto cursiba</i>
+    <blockquote>//el texto sea como una cita</blockquote>
+
+    <p>listas ordenada</p>// esto vale para hacer un menu de navegacion
+    <ol>
+        // para crear los elementos tienes que usar li
+        <li>manzana</li>// pueden ser enlaces a otras paginas
+        <ul>//para crear una lista dentro de otra
+            <li>roja</li>
+        </ul>
+        <li>naranga</li>
+    </ol>
+    <ul>
+        //lista desordenada solo con puntos
+    </ul>
+
+    <h2>Imagenes</h2> //src ruta relativa
+    <img src="./imagenes/sara.jpg.jpg" alt="Cuando la imagen no carge" title="cuando pases por encima de la imagen" width="250px" height="altura" />// no tiene contenido se cierra asi
+    <h3>Tablas</h3>
+    <table border="1">//para que me dibuje la tabla
+        <tr>//fila
+            <th>//columna Nombre</th>// se usa para resaltar la primera fila
+            <th>apellidos</th>
+        </tr>
+        <tr>//fila
+            <td colspan="2">//alex</td>//colspan se aplica a los td para expandir las columnas como tantas quiero en este caso dos colunmas
+            <td>pando</td>
+        </tr>
+        <tr>//fila
+            <td>//pedro</td>
+            <td>caca</td>
+        </tr>
+    </table>
+
+    <h3>Formularios</h3>
+    <form action="" method="post">//action para saber a donde se va enviar ese formulario //method para indicarle que metodo http vamos usar
+        <p>
+            <label for="nombre">Nombre</label> //el nombre del campo visible
+            <input type="texto" name="nombre" placeholder="escribe tu nombre..." /> //campo tipo texto //placeholder se ve en el campo y cuando escribes desaparece
+        </p>
+        <p>
+            <label for="descripcion">Descripcion</label>
+            <textarea name="descripcion"></textarea>// otro campo
+        </p>
+        <p>
+            //campo para seleccionar una opcion de varias
+            <input type="radio" name="genero" value="hombre">Hombre <br/>
+            <input type="radio" name="genero" value="mujer">Mujer <br/>
+        </p>
+        <p>// otro campo
+            <select name="generodos" id="">
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+        </p>
+
+        <input type="submit" value="Enviar formulario" />//pintar un boton para enviar el formulario
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<libros>
+    <libro id="1">
+        <titulo any="1862">Los Miserables 1</titulo>
+        <!--<titulo>Los Miserables 2</titulo>-->
+        <autor>Victor Hugo</autor>
+        <precio>230</precio>
+    </libro>
+    <libro id="2">
+        <titulo any="1916">Sherlock Holmes</titulo>
+        <autor>Conan Doyle</autor>
+        <precio>200</precio>
+    </libro>
+    <libro id="3">
+        <titulo any="1848">David Copperfield</titulo>
+        <autor>Charles Dickens</autor>
+        <precio>180</precio>
+    </libro>
+</libros>

@@ -1,0 +1,71 @@
+﻿<html>
+
+<head>
+    <meta charset="utf8" />
+    <title>Prueba con formularios</title>
+    <script type="text/javascript">
+        function validarFormulario() {
+            var login = document.form2.login.value;
+            var edad = document.form2.edad.value;
+            var aNac = document.form2.nacimiento.value;
+            var provIndSel = document.form2.provincia.selectedIndex;
+            var provincia = document.form2.provincia.options[provIndSel];
+
+            if (login == null || login == "") {
+                alert("El campo login no puede estar vacío");
+                return false;
+
+            } else if (isNaN(edad) || parseInt(edad) < 0 || parseInt(edad) > 200) {
+
+                alert("El campo edad debe estar comprendido entre 0 y 200");
+                return false;
+
+            } else if (/^\d{4}$/.test(aNac) == false) {
+
+                alert("El año de nacimiento debe constar de 4 dígitos");
+                return false;
+
+            } else if (provincia.value == "") {
+
+                alert("Debe seleccionar una provincia");
+                return false;
+
+            } else {
+
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h3>-FORMULARIO-</h3>
+
+    <form name="form2" action="http://192.168.166.2/php/pagina.php" method="post" onsubmit="return validarFormulario()">
+
+        <label for="login">Login:</label>
+        <input type="text" name="login" size="20" /> <br />
+
+        <label for="edad">Edad:</label>
+        <input type="text" name="edad" size="5" /> <br />
+
+        <label for="nacimiento">Año de nacimiento</label>
+        <input type="text" name="nacimiento" size="5" /> <br />
+
+        <label for="provincia">Seleccione provincia</label>
+        <select name="provincia">
+		<option value="">-Seleccionar una provincia-</option>
+		<option value="Alicante">Alicante</option>
+		<option value="Valencia">Valencia</option>
+		<option value="Castellón">Castellón</option>
+	</select>
+        <br />
+
+        <input type="submit" value="Enviar" />
+
+    </form>
+
+</body>
+
+</html>

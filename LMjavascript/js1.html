@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Ejercicio 10 - Detecci�n de pal�ndromos</title>
+    <style type="text/css">
+        #imgCarrusel {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+    <script type="text/javascript">
+        function cambios() {
+            var divuno = document.getElementById("uno");
+            divuno.style.marginLeft = '100px';
+            divuno.style.marginRight = '100px';
+            divuno.style.border = 'red 5px inset';
+            divuno.style.fontSize = '30px';
+            divuno.style.backgroundColor = 'green';
+            divuno.style.color = 'yellow';
+            divuno.style.paddingLeft = '20px';
+            divuno.style.borderBottomRightRadius = '20px';
+            divuno.style.borderTopLeftRadius = '20px';
+
+        }
+
+        function fondo(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        function fondoI(color) {
+
+            document.body.style.backgroundImage = color; //"url('http://java2s.com/style/demo/border.png')";
+        }
+
+        function image1() {
+            // document.getElementById("cuatro").innerHTML='<img src="./image1.jpg" />';
+            document.getElementById("imgCarrusel").src = 'image1.jpg';
+            document.getElementById("imgCarrusel").style.width = '200px';
+            document.getElementById("imgCarrusel").style.height = '150px';
+
+        }
+
+        function image2() {
+            // document.getElementById("cuatro").innerHTML='<img src="./imagen2.jpg" />';
+            document.getElementById("imgCarrusel").src = 'imagen2.jpg';
+            document.getElementById("imgCarrusel").style.width = '200px';
+            document.getElementById("imgCarrusel").style.height = '150px';
+
+        }
+    </script>
+</head>
+
+<body onload="cambios()">
+
+    <div id="uno">hola</div>
+
+    <div id="dos" onmouseover="document.getElementById('dos').style.backgroundColor='yellow'" onmouseout="document.getElementById('dos').style.backgroundColor='blue'">como</div>
+
+    <div id="tres">
+        <button onclick="fondo('red')">rojo</button>
+        <button onclick="fondo('blue')">azul</button>
+        <button onclick="image1()">Imegen1</button>
+        <button onclick="image2()">Imegen2</button>
+    </div>
+
+    <img id="imgCarrusel" src="image1.jpg">
+
+
+
+</body>
+
+</html>

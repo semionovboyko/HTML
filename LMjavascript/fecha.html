@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title></title>
+    <script>
+        function tiempo() {
+            var hora = new Date();
+            var h = hora.getHours();
+            var m = hora.getMinutes(); //con cada objeto se invoca a una funcion distinta de date
+            var s = hora.getSeconds();
+
+            document.getElementById("reloj").innerHTML = h + ":" + m + ":" + s;
+
+            setTimeout("tiempo()", 1000); //se llama a la funcion en el parentesis
+        }
+    </script>
+</head>
+
+
+
+<body onload="tiempo()">
+
+    <div id="reloj"></div>
+
+</body>
+
+</html>

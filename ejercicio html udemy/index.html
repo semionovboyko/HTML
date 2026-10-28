@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es"> //es = atributo se puede usar comillas o no  siempre que no tengan espacios o caracteres reservados
+
+  <head>
+    //PARTE QUE NO SE VE EN LA PAGINA
+      //head parte A
+      <meta charset="utf-8">//define el codificacion de caracteres que se usara en el doc
+        //siempre antes de cualquier elemento
+      //head parte B
+
+      <title>web</title>
+      <meta name="description" content="web">/opcional
+      <meta name="autor" content="Alexey">/opcional
+      <link rel="stylesheet" href="./css/style.class" type="text/css">
+  </head>
+
+  <body>
+      <!--Encabezado-->
+      <h1>web</h1>
+
+
+      <!--Menu-->
+      <ul>
+          <li><a href="index.html" title="inicio">Inicio</a></li>
+          <li><a href="contenidos.html" title="Contenidos">Contenidos</a></li>
+          <li><a href="contactos.html" title="contactos">Contactos</a></li>
+      </ul>
+      <!--Condenido de index.html-->
+      <h2>Bienvenido a mi website</h2>
+      <img  class="pet" src="./imagenes/sara.jpg.jpg" alt="sara" title="sara" height="900px" width="540px">
+      <p>
+          Los textos o «páginas wiki» tienen títulos únicos. Si se escribe el título de una página wiki en algún sitio de la wiki entre dobles corchetes ([[Título de la página]]), esta palabra se convierte en un «enlace web» a la página correspondiente. De este
+          modo, en una página sobre «alpinismo» puede haber una palabra como «piolet» o «brújula» que esté marcada como palabra perteneciente a un título de página wiki. La mayor parte de las implementaciones de wikis indican en el localizador de recursos
+          uniforme (URL) de la página el propio título de la página wiki (en Wikipedia, ocurre así: es el URL de la página wiki Alpinismo), lo que facilita el uso y la aplicación general del enlace fuera del propio sitio web. Además, esto permite formar
+          en muchas ocasiones una coherencia terminológica, y genera una ordenación natural del contenido.
+          <br>salto de linea
+          <strong></strong>
+      </p>
+      <img src="" alt="no se encuentra">
+      <script src="para validar una pag que tiene scripts externos"type="text/javascript">
+      //siempre al final
+      </script>
+      //wwww.w3schools.com/html/html_forms.asp
+      <table border="1">
+        <tr>
+          <th>First</th>
+          <th>last</th>
+        </tr>
+        <tr>
+          <td>ALex</td>
+          <td>paco</td>
+        </tr>
+      </table>
+
+      // listas
+      <ol>//ordenada
+        <li>caffe</li>
+        <li>caca</li>
+        <li>buu</li>
+      </ol>
+      <ul>
+        <li>oso</li>
+        <li>pato</li>
+        <li>pez</li>
+      </ul>
+      <form class="formu" action="index.html" method="post">//formularios
+        <input type="text" name="paco" value="lalo">
+        <select class="form" name="selec">
+        </select>
+      </form>
+
+      //http:librosweb.es/css
+      <iframe src="https://www.google.es/" target="google" width="250px" height="250px"></iframe>
+
+
+      <h3>Análisis de ventas</h3>
+      <table summary="Análisis de ventas anuales">
+          <caption>Análisis de ventas anuales</caption>
+          <thead>
+            <tr>
+               <th rowspan="2" scope="col">AÑO</th>
+               <th colspan="4" scope="col">Expansión de ventas</th>
+            </tr>
+            <tr>
+               <th scope="col">Producto A</th>
+               <th scope="col">Producto B</th>
+               <th scope="col">Producto C</th>
+               <th scope="col">Producto D</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+                <th rowspan="2" scope="col">AÑO</th>
+                <th scope="col">Producto A</th>
+                <th scope="col">Producto B</th>
+                <th scope="col">Producto C</th>
+                <th scope="col">Producto D</th>
+            </tr>
+            <tr>
+                <th colspan="4" scope="col">Expansión de ventas</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr>
+                <th scope="row">N-3</th><td>-</td><td>-</td><td>-</td><td>-</td>
+            </tr>
+            <tr>
+                <th scope="row">N-2</th><td>3</td><td>5</td><td>8</td><td>4</td>
+            </tr>
+            <tr>
+                <th scope="row">N-1</th><td>4</td><td>4</td><td>7</td><td>3</td>
+            </tr>
+            <tr>
+                <th scope="row">N</th><td>5</td><td>7</td><td>6</td><td>2</td>
+            </tr>
+          </tbody>
+        </table>
+
+  </body>
+
+</html>

@@ -1,0 +1,118 @@
+!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <SCRIPT LANGUAGE="JavaScript">
+        //Mostrar por pantalla
+
+        var respuesta;
+        respuesta = confirm("¿Desea cancelar la subscripción?"); //cuadro botones aceptar o cancelar
+        alert("Usted ha contestado que " + respuesta);
+
+        var provincia;
+        provincia = prompt("Introduzca la provincia ", "Valencia"); // cuadro de dialogo
+        alert("Usted ha introducido la siguiente información " + provincia)
+
+        /*Operador (x=5)
+        y = ++ x Primero el incremento y después la asignación.y=6
+        y = x++ Primero la asignación y después el incremento y=5
+        y = -- x Primero el decremento y después la asignación. y=4
+        y = x-- Primero la asignación y después el decremento. y=5
+        y =-x Se asigna a y el valor negativo de x, pero x no varía. y = -5
+        */
+        var a = 4;
+        b = 5;
+        alert("El resultado de la expresión 'a==b' es igual a " + (a == b));
+        alert("El resultado de la expresión 'a!=b' es igual a " + (a != b));
+        alert("El resultado de la expresión 'a>b' es igual a " + (a > b));
+        alert("El resultado de la expresión 'a<b' es igual a " + (a < b));
+        alert("El resultado de la expresión 'a>=b' es igual a " + (a >= b));
+        alert("El resultado de la expresión 'a<=b' es igual a " + (a <= b))
+
+        //ESTRUCTURAS DE CONTROL Y BUCLES
+        var xdia;
+        xdia = prompt("Introduce el día de la semana ", "");
+        if (xdia == "domingo") {
+            alert("Hoy es festivo");
+        } else
+            alert("Hoy no es domingo, es muy probable que tengas que trabajar");
+
+        var edadAna, edadLuis;
+        edadAna = parseInt(prompt("Introduce la edad de Ana", ""));
+        edadLuis = parseInt(prompt("Introduce la edad de Luis", ""));
+        if (edadAna > edadLuis) {
+            alert("Ana es mayor que Luis.");
+        } else {
+            if (edadAna < edadLuis) {
+                alert("Ana es menor que Luis.");
+            } else {
+                alert("Ana tiene la misma edad que Luis.");
+            }
+        }
+
+        alert(" Ana tiene " + edadAna + " años y Luis " + edadLuis);
+
+        // Escribe las potencias de 2 hasta 3000 
+        aux = 1;
+        for (i = 2; i <= 3000; i *= 2) {
+            alert("2 elevado a " + aux + " es igual a " + i);
+            aux++;
+        }
+        alert("Ya se han escrito las potencias de 2 menores de 3000");
+
+        auxclave = "";
+        while (auxclave != "vivaYO") {
+            auxclave = prompt("introduce la clave ", "claveSecreta")
+        }
+        alert("Has acertado la clave");
+
+        do {
+            auxclave = prompt("introduce la clave ", "vivaYo")
+        } while (auxclave != "EstaeslaclaveJEJEJE")
+
+        alert("Has acertado la clave");
+
+        // Pregunta por la clave y permitir tres respuestas incorrectas 
+        var auxclave = true;
+        var numveces = 0; //Mientras no introduzca la clave y no se pulse Cancelar
+        while (auxclave != "anonimo" && auxclave) {
+
+            auxclave = prompt("Introduce la clave ", "");
+            numveces++;
+
+            if (numveces == 3)
+                break;
+        }
+        if (auxclave == "SuperClave")
+            alert("La clave es correcta");
+        else
+            alert("La clave no es correcta correcta");
+
+
+        // Definiciones de las funciones 
+        function suma(a, b) {
+            // Esta funcion devuelve un valor
+            return a + b;
+        }
+
+        function profe() {
+            // Esta funcion muestra un texto, pero no devuelve un valor 
+            alert("El profesor es: Sergi Garcia");
+        } // Codigo que se ejecuta
+        var op1 = 5;
+        op2 = 25;
+        var resultado; // Llamada a funcion 
+        resultado = suma(op1, op2); // llamada a la funcion 
+        console.log(op1 + "+" + op2 + "=" + resultado);
+        // Llamada a funcion 
+        profe();
+
+        //CAMBIAR DINÁMICAMENTE PROPIEDADES DE OBJETOS 
+
+        function cambiarImagen(id, rutaImagen) {
+            document.getElementById(id).src = rutaImagen;
+        }
+    </SCRIPT>
+</head>
+
+</html>

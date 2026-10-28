@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body onload="loadXMLDoc()">
+
+    <p id="demo"></p>
+
+    <script type="text/javascript">
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            xmlhttp.open("GET", "libros.xml", true);
+            xmlhttp.send();
+        }
+
+
+        function myFunction(xml) {
+            var x, i, xmlDoc, dato;
+            var celda, texto;
+            xmlDoc = xml.responseXML;
+            enfermos = "";
+            txt = "";
+            //txt = xmlDoc.getElementsByTagName("titulo")[0].childNodes[0].nodeValue;
+            dato = xmlDoc.getElementsByTagName("libro");
+            for (i = 0; i < dato.length; i++)
+
+                txt += dato[i].getElementsByTagName("titulo")[0].childNodes[0].nodeValue +
+                "  " + "<strong>" +
+                dato[i].getElementsByTagName("titulo")[0].getAttribute('any') + "</strong></br>";
+
+
+
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
+
+</body>
+
+</html>

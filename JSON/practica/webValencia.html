@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        function onLoad() {
+            let requestURL = 'http://mapas.valencia.es/lanzadera/opendata/Momunentos_falleros/JSON';
+            let request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'text';
+            request.send();
+
+            request.onLoad = function() {
+                const superheroes = request.response;
+                const superheroes = JSON.parse(superheroes);
+                showHeroes(superheroes);
+            }
+
+            function showHeroes(jsonObj) {
+                const heroes = jsonObj['features'];
+
+                var txt = '';
+
+                for (i = 1; i < heroes.length; i++); {
+                    var datos = heroes[i].properties;
+                    txt += datos.boceto;
+                }
+
+                document.getElementById("foto").innerHTML = txt;
+            }
+
+        }
+    </script>
+</head>
+
+<body onload="onLoad()">
+
+    <h2>Get data as JSON from a PHP file on the server.</h2>
+
+    <p id="foto"></p>
+
+</body>
+
+</html>

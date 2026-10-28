@@ -1,0 +1,56 @@
+h1 {
+    margin-left: 10%;
+}
+
+body {
+    padding-top: 20px;
+    background: -webkit-linear-gradient(top, rgb(13, 151, 144) 0%, rgba(240, 101, 41, 0) 90%);
+    background: -moz-linear-gradient(top, rgb(13, 151, 144) 0%, rgba(240, 101, 41, 0) 90%);
+    background: -o-linear-gradient(top, rgb(13, 151, 144) 0%, rgba(240, 101, 41, 0) 90%);
+    background: linear-gradient(to bottom, rgb(13, 151, 144) 0%, rgba(240, 101, 41, 0) 90%);
+}
+
+fieldset {
+    width: 40%;
+    height: 50%;
+    margin-left: 3%;
+}
+
+input:not([type=submit]),
+textarea {
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    color: black;
+    font-weight: bold;
+    padding: 1px 4px 1px 45px;
+    margin-bottom: 10px;
+}
+
+
+/*Estilo del cuadrado de dialogo*/
+
+input:not([type=submit]) {
+    height: 32px;
+    width: 330px;
+}
+
+
+/*Expasion del cuadro dialogo cuando se vaya a escribir*/
+
+input:not([type=submit]):focus {
+    width: 370px;
+}
+
+
+/*BOTON DE ENVIAR*/
+
+input[type="submit"] {
+    margin: 10px 0px;
+    padding: 10px;
+    border: 1px solid #434343;
+    cursor: pointer;
+}
+
+#boton {
+    margin-left: 20%;
+}

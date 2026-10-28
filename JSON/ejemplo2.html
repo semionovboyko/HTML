@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        function onLoad() {
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var dataArray = JSON.parse(this.responseText);
+                    alert(dataArray.length);
+                    miFuncion(dataArray);
+                    //var i, j;
+                    //var displayData = dataArray;
+
+
+                }
+            };
+
+            xmlhttp.open("GET", "superheroes.json", true);
+            xmlhttp.send();
+        }
+
+        /*function showHeroes(jsonObj) {
+            var txt = '';
+            for (i = 0; i < jsonObj.length; i++) {
+                txt += jsonObj[i].superhero + "<br/>";
+            }
+
+            document.getElementById("demo").innerHTML = txt;
+        }*/
+        function miFuncion(superHeroes) {
+            var displayData = "";
+            alert(superHeroes.length);
+            for (i = 0; i < superHeroes.length; i++) {
+                displayData += "<div class='presentacion'>" + "<div class='posicion'>" +
+                    "Nombre: <strong>" + superHeroes[i].superhero + "</strong><br/>" +
+                    "Actor: " + superHeroes[i].characters + "<br/>" + superHeroes[i].publisher + "<br/>" +
+                    superHeroes[i].alter_ego + "</div>" +
+                    "<img src='" + superHeroes[i].picture + "'/></div>";
+            }
+            document.getElementById("demo").innerHTML = displayData;
+
+        }
+    </script>
+</head>
+
+<body onload="onLoad()">
+
+    <h2>Get data as JSON from a PHP file on the .</h2>
+
+    <p id="demo"></p>
+
+</body>
+
+</html>

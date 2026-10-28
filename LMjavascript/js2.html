@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function crealista(){
+            
+            // Creo un nodo de tipo LI
+            var nuevoNodo = document.createElement("li");
+            // Al nodo LI le asocio un texto (tambien podria asociarle XHTML con innerHTML)
+            var nodoTexto = document.createTextNode("Agua");
+
+            nuevoNodo.appendChild(nodoTexto);
+            // A miLista, lista ya existente, le añado el elemento creado
+            document.getElementById("miLista").appendChild(nuevoNodo);
+
+        }
+
+        function crearBotones(){
+            for(i=0;i<100;i++)
+            {
+                //var valorAleatorio=Math.random();
+                // Creamos el checkbox con value aleatorio
+                var boton = document.createElement('input');
+                boton.type = "button";
+                boton.name = "name";
+                boton.value = "Click me";
+                boton.id = "id"+i;
+                
+
+                // Anexamos body y etiqueta al body
+                //document.body.appendChild(boton);
+
+                document.getElementById("miBoton").appendChild(boton);
+            }
+        }
+        </script>    
+    </head>
+   
+    <body>
+        <div id="miLista"></div>
+        <button onclick="crealista()">Lista</button>
+        <button onclick="crearBotones()">Botones</button>
+        <div id="miBoton"></div>
+
+
+
+    </body>
+</html>

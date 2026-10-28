@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--meta utf-8 para los caracteres ñ
+años =eval(nacimiento-muerte)-->
+
+<body onload="loadXMLDoc()">
+
+    <h1>MUSEOS</h1>
+    <p id="mus"></p>
+    <h1>ARTISTAS</h1>
+    <p id="demo"></p>
+    <h1>OBRAS</h1>
+    <p id="obr"></p>
+
+
+    <script type="text/javascript">
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            xmlhttp.open("GET", "museos.xml", true);
+            xmlhttp.send();
+        }
+
+
+        function myFunction(xml) {
+            var x, i, j, xmlDoc, dato, museo, obra;
+            var celda, texto;
+            xmlDoc = xml.responseXML;
+            enfermos = "";
+            txt = "";
+            txt1 = "";
+            txt2 = "";
+
+            dato = xmlDoc.getElementsByTagName("artista");
+            //alert(dato.length);
+            for (i = 0; i < dato.length; i++)
+
+                txt += dato[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue +
+                "  " + "nacio en el anyo " + "<strong>" +
+                dato[i].getElementsByTagName("nacimiento")[0].childNodes[0].nodeValue + "</strong>" + " y murio en el anyo  " + "<strong>" +
+                dato[i].getElementsByTagName("muerte")[0].childNodes[0].nodeValue + "</strong></br>";
+
+            document.getElementById("demo").innerHTML = txt;
+
+
+            museo = xmlDoc.getElementsByTagName("museo");
+            for (i = 0; i < museo.length; i++)
+                txt1 += "Museo: " + "<strong>" + museo[i].getAttribute('nombre') + "</strong>" + " " +
+                museo[i].getElementsByTagName("arquitecto")[0].childNodes[0].nodeValue + " " + " se construllo en el Siglo " +
+                museo[i].getElementsByTagName("construccion")[0].childNodes[0].nodeValue + " </br>";
+
+            document.getElementById("mus").innerHTML = txt1;
+
+            ob = xmlDoc.getElementsByTagName("obra");
+            //alert(ob.length)
+            for (i = 0; i < ob.length; i++)
+                txt2 += "Obra: " +
+                ob[i].childNodes[0].nodeValue + "</strong>" + " autor " + "<strong>" +
+                ob[i].getAttribute('autor') + "</strong>" + " expuesto en el museo " + "<strong>" +
+                ob[i].getAttribute('museo') + "</strong></br>";
+
+            document.getElementById("obr").innerHTML = txt2;
+        }
+    </script>
+
+</body>
+
+</html>

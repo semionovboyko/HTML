@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+
+
+<script>
+var txt = '{"name":"John", "age":30, "city":"New York"}';
+var txt2 = '[{"name":"Joe", "age":31, "city":"New York"},{"name":"Juan", "age":32, "city":"New York"},{"name":"Juanito", "age":33, "city":"New York"}]';
+var person = { name: "John", age: 31, city: "New York" };
+var myObj = {
+  "name":"John",
+  "age":30,
+  "cars": [
+    {"name":"Ford", "models":["Fiesta", "Focus", "Mustang"]},
+    {"name":"BMW", "models":["320", "X3", "X5"]},
+    {"name":"Fiat", "models":["500", "Panda"] }
+  ]
+}
+
+var obj = JSON.parse(txt);
+document.getElementById("demo").innerHTML = "txt: "+obj.name + ", " + obj.age;
+
+
+var obj2 = JSON.parse(txt2);
+document.getElementById("demo2").innerHTML = "txt2: "+obj2[0].name + ", " + obj2[0].age;
+
+//var obj3 = JSON.parse(person);
+document.getElementById("demo3").innerHTML = "person: "+person.name + ", " + person.age;
+var x="";
+for (i in myObj.cars) {
+  x += "<h2>" + myObj.cars[i].name + "</h2>";
+  for (j in myObj.cars[i].models) {
+    x += myObj.cars[i].models[j] + "<br>";
+  }
+}
+document.getElementById("demo4").innerHTML = x;
+
+</script>
+
+</body>
+</html>
